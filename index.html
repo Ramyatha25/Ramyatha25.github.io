@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Ramyatha Reddy - Software Developer Portfolio">
+
+<title>Ramyatha Reddy | Software Developer</title>
+
+<style>
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #080f1c;
+    --nav: #101c2e;
+    --card: #142238;
+    --blue: #38bdf8;
+    --text: #ffffff;
+    --muted: #cbd5e1;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+header {
+    background: var(--nav);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #263d59;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--blue);
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+/* HOME */
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.welcome {
+    color: var(--blue);
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 7vw, 65px);
+    margin: 25px 0;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero h3 {
+    color: #94a3b8;
+    font-size: 24px;
+    min-height: 42px;
+}
+
+#typing {
+    color: var(--blue);
+    border-right: 3px solid var(--blue);
+    padding-right: 5px;
+}
+
+.hero p {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 17px;
+    margin: 22px auto;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 7px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #0284c7;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0369a1;
+    transform: translateY(-4px);
+}
+
+.outline {
+    background: transparent;
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--blue);
+    margin-bottom: 35px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #263d59;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: #7dd3fc;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+/* SKILLS */
+
+.skill-group {
+    margin-bottom: 27px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-group h3 {
+    color: #7dd3fc;
+    margin-bottom: 15px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills span {
+    background: #142c45;
+    color: #7dd3fc;
+    padding: 9px 17px;
+    border: 1px solid #285477;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: #075985;
+    color: white;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid #263d59;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--muted);
+}
+
+.tag {
+    display: inline-block;
+    background: #142c45;
+    color: #7dd3fc;
+    padding: 5px 11px;
+    margin: 14px 5px 0 0;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* CERTIFICATIONS */
+
+.certificate-list {
+    list-style: none;
+}
+
+.certificate-list li {
+    color: var(--muted);
+    padding: 10px 0;
+    border-bottom: 1px solid #263d59;
+}
+
+.certificate-list li:last-child {
+    border-bottom: none;
+}
+
+/* CONTACT */
+
+.contact-box {
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+.contact-box a:not(.btn) {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--nav);
+    text-align: center;
+    padding: 28px 15px;
+    border-top: 1px solid #263d59;
+    color: #94a3b8;
+}
+
+footer span {
+    color: var(--blue);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeUp 1s ease;
+}
+
+/* MOBILE DESIGN */
+
+@media(max-width: 700px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 55px 20px;
+    }
+
+    .hero h3 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .project-card {
+        padding: 21px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">RAMYATHA.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internship">Internship</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <p class="welcome">
+        WELCOME TO MY PORTFOLIO
+    </p>
+
+    <h1>
+        Hi, I'm <span>Ramyatha Reddy</span>
+    </h1>
+
+    <h3>
+        <span id="typing"></span>
+    </h3>
+
+    <p>
+        Computer Science and Engineering student
+        passionate about software development,
+        programming and technology.
+
+        I enjoy solving problems and building
+        practical applications that address
+        real-world challenges.
+    </p>
+
+    <div class="buttons">
+
+        <a href="#projects" class="btn">
+            Explore My Projects
+        </a>
+
+        <a href="#contact" class="btn outline">
+            Contact Me
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+
+        <p>
+            Hello! I am Ramyatha Reddy, a Computer
+            Science and Engineering student at
+            Madanapalle Institute of Technology
+            and Science (MITS).
+        </p>
+
+        <p>
+            I am interested in software development,
+            programming, cybersecurity and
+            continuous learning.
+        </p>
+
+        <p>
+            I enjoy exploring new technologies,
+            improving my technical knowledge and
+            developing practical projects.
+        </p>
+
+        <p>
+            My career goal is to become a skilled
+            Software Developer and contribute to
+            innovative technology solutions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="card">
+
+        <div class="skill-group">
+
+            <h3>Programming Languages</h3>
+
+            <div class="skills">
+                <span>Java</span>
+                <span>SQL</span>
+            </div>
+
+        </div>
+
+        <div class="skill-group">
+
+            <h3>Web Technologies</h3>
+
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+            </div>
+
+        </div>
+
+        <div class="skill-group">
+
+            <h3>Operating Systems</h3>
+
+            <div class="skills">
+                <span>Windows</span>
+                <span>Linux</span>
+            </div>
+
+        </div>
+
+        <div class="skill-group">
+
+            <h3>Cybersecurity Tools</h3>
+
+            <div class="skills">
+                <span>Nmap</span>
+                <span>Burp Suite</span>
+                <span>Nessus</span>
+                <span>Wireshark</span>
+                <span>Metasploit</span>
+                <span>PortSwigger Labs</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <h3>Malware Detection</h3>
+
+            <p>
+                Developed a malware detection application
+                with a graphical user interface, signature
+                and heuristic analysis, PDF reporting,
+                API threat lookup, user authentication
+                and real-time dataset analysis.
+            </p>
+
+            <span class="tag">Python</span>
+            <span class="tag">Malware Analysis</span>
+            <span class="tag">Cybersecurity</span>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>College Network Analysis</h3>
+
+            <p>
+                Analyzed college network infrastructure
+                using Wireshark, Nmap and network topology
+                mapping to identify vulnerabilities and
+                provide recommendations for improving
+                network security and performance.
+            </p>
+
+            <span class="tag">Wireshark</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Networking</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERNSHIP -->
+
+<section id="internship">
+
+    <h2 class="section-title">
+        Internship Experience
+    </h2>
+
+    <div class="card">
+
+        <h3>Ethical Hacking Intern</h3>
+
+        <p>Supraya Technologies</p>
+
+        <p>June 2025 - September 2025</p>
+
+        <p>
+            Gained practical experience in
+            penetration testing, vulnerability
+            assessment, network reconnaissance
+            and web application security testing.
+        </p>
+
+        <p>
+            Practiced security testing using
+            Nmap, Burp Suite and PortSwigger
+            Web Security Academy labs.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+
+        <h3>
+            Bachelor of Technology (B.Tech)
+        </h3>
+
+        <p>
+            Computer Science and Engineering
+        </p>
+
+        <p>
+            Madanapalle Institute of Technology
+            and Science (MITS)
+        </p>
+
+        <p>
+            CGPA: 9.14 (as stated in resume)
+        </p>
+
+        <p>
+            Academic Status: Currently Pursuing
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2 class="section-title">
+        Certifications
+    </h2>
+
+    <div class="card">
+
+        <ul class="certificate-list">
+
+            <li>Ethical Hacker - Cisco</li>
+
+            <li>
+                Cyber Security Fundamentals -
+                IBM SkillsBuild
+            </li>
+
+            <li>
+                Cyber Security Essentials - Simplilearn
+            </li>
+
+            <li>
+                Ethical Hacking - Supraya Technologies
+            </li>
+
+            <li>SQL - HackerRank</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Let's Connect
+    </h2>
+
+    <div class="card contact-box">
+
+        <p>
+            I am open to learning opportunities,
+            professional connections and
+            software development roles.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:ramyatha669@gmail.com">
+                ramyatha669@gmail.com
+            </a>
+        </p>
+
+        <div class="buttons">
+
+            <a href="https://github.com/Ramyatha25"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn">
+                GitHub Profile
+            </a>
+
+            <a href="https://www.linkedin.com/in/ramyatha-reddy-69836535a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn outline">
+                LinkedIn Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <span>Ramyatha Reddy</span>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Designed and Developed by Ramyatha
+    </p>
+
+</footer>
+
+
+<!-- TYPING ANIMATION -->
+
+<script>
+
+const titles = [
+    "Software Developer",
+    "Java Programmer",
+    "Web Developer",
+    "Problem Solver"
+];
+
+let titleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const element = document.getElementById("typing");
+
+    const currentTitle = titles[titleIndex];
+
+    if (!element) return;
+
+    if (!deleting) {
+
+        element.textContent =
+            currentTitle.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if (charIndex === currentTitle.length) {
+
+            deleting = true;
+
+            setTimeout(typeEffect, 1200);
+
+            return;
+        }
+
+    } else {
+
+        element.textContent =
+            currentTitle.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+            deleting = false;
+
+            titleIndex =
+                (titleIndex + 1) % titles.length;
+        }
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 60 : 100
+    );
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
